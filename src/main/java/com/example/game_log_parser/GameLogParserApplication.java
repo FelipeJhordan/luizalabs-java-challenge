@@ -1,13 +1,13 @@
-package com.example.desafio_backend_java_luizalabs;
+package com.example.game_log_parser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DesafioBackendJavaLuizalabsApplication {
+public class GameLogParserApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DesafioBackendJavaLuizalabsApplication.class, args);
+		SpringApplication.run(GameLogParserApplication.class, args);
 	}
 
 }
