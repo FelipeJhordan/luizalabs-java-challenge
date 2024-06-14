@@ -1,4 +1,4 @@
-package com.example.game_log_parser.core.domain;
+package com.example.game_log_parser.core.domain.entities;
 
 import java.util.List;
 
