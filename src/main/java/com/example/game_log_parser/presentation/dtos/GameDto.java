@@ -3,6 +3,9 @@ package com.example.game_log_parser.presentation.dtos;
 import java.util.List;
 import java.util.Map;
 
+import lombok.Data;
+
+@Data()
 public class GameDto {
     private int id;
     private int total_kills;
