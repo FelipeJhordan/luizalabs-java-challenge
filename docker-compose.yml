@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+
+    game_log_parser:
+      build: .
+      container_name: game_log_parser
+      image: game_log_parser
+      restart: always
+      ports:
+        - 8080:8080
+      depends_on:
+      - mongo  
+
+    mongo:
+      image: mongo
+      container_name: mongo
+      restart: always
+      ports:
+        - 27017:27017
+        
+    mongo-express:
+      container_name: mongo-express
+      image: mongo-express
+      restart: always
+      ports:
+        - 8081:8081
