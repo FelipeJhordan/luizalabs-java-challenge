@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data()
 public class Game {
-    private int id;
+    private long id;
     private int total_kills;    
     private List<Player> players;
 }
