@@ -20,7 +20,7 @@ public class GameModel {
     @Id()
     private long id;
 
-    private int total_kills;
+    private int totalKills;
 
     private List<String> players;
 

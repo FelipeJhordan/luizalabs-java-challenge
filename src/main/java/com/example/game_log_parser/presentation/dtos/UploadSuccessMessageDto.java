@@ -7,5 +7,5 @@ import lombok.Data;
 @AllArgsConstructor()
 public class UploadSuccessMessageDto {
     private String message;
-    private int games_processed;
+    private int gamesProcessed;
 }
