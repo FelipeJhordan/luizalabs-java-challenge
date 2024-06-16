@@ -41,8 +41,9 @@ public class GameRepositoryImp implements IGameRepository {
     }
 
     @Override
-    public void saveBulk(List<GameModel> games) {
-        mongoRepository.saveAll(games);
+    public int saveBulk(List<Game> games) {
+        List<GameModel> gameModels = games.stream().map(GameMapper::ofDomain).collect(Collectors.toList());
+        return mongoRepository.saveAll(gameModels).size();
     }
         
 }
