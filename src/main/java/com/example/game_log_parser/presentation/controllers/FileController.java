@@ -26,7 +26,7 @@ public class FileController {
     @PostMapping
     public ResponseEntity<UploadSuccessMessageDto> uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
 
-        int games_processed = processLinesAndSaveUsecase.execute(file.getInputStream());
-        return ResponseEntity.ok(new UploadSuccessMessageDto("File uploaded successfully", games_processed));
+        int gamesProcessed = processLinesAndSaveUsecase.execute(file.getInputStream());
+        return ResponseEntity.ok(new UploadSuccessMessageDto("File uploaded successfully", gamesProcessed));
     }
 }

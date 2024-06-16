@@ -16,4 +16,13 @@ public class GameMapper {
                 .kills(gameEntity.getKills())
                 .build();
     }
+
+    public GameModel ofDomain(final Game game) {
+        return GameModel.builder()
+                .id(game.getId())
+                .totalKills(game.getTotalKills())
+                .players(game.getPlayers())
+                .kills(game.getKills())
+                .build();
+    }
 }
