@@ -31,7 +31,11 @@ public class FileController {
     )
     public ResponseEntity<UploadSuccessMessageDto> uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
 
-        int gamesProcessed = processLinesAndSaveUsecase.execute(file.getInputStream());
-        return ResponseEntity.ok(new UploadSuccessMessageDto("File uploaded successfully", gamesProcessed));
+       try {
+            int gamesProcessed = processLinesAndSaveUsecase.execute(file.getInputStream());
+            return ResponseEntity.ok(new UploadSuccessMessageDto("File uploaded successfully", gamesProcessed));
+        } catch (IOException e) {
+            return ResponseEntity.internalServerError().build();
+       }
     }
 }
