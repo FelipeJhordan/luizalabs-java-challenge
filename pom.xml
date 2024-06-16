@@ -85,6 +85,7 @@
 					<exclude>**/*DatabaseSequenceModel*</exclude>
 					<exclude>**/*GameLogParserApplication*</exclude>
 					<exclude>**/*GameGenerateIdMongoEventListener*</exclude>
+					<exclude>**/*Model*</exclude>
 				</excludes>
             </configuration>
             <executions>
