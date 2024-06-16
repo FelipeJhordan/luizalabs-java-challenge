@@ -36,30 +36,32 @@ public class Game {
             String killer = extractKiller(line);
             String victim = extractVictim(line);
 
-            boolean isSuicide = killer.equals(victim);
+            if(killer == null) return;
+
+            boolean isSuicide =   killer.equals(victim);
             if(isSuicide) {
                 return;
             }
 
-            boolean  killerExistsAndNoIsWorld  = killer != null && !killer.equals("<world>");
-            if (killerExistsAndNoIsWorld) {
+            boolean  worldNoIsKiller  =  !killer.equals("<world>");
+            if (worldNoIsKiller) {
                 kills.put(killer, kills.getOrDefault(killer, 0) + 1);
             }
 
-            boolean victimExistsAndKillerIsWorld = victim != null && killer != null && killer.equals("<world>");
+            boolean victimExistsAndKillerIsWorld = victim != null  && killer.equals("<world>");
             if (victimExistsAndKillerIsWorld) {
                 kills.put(victim, kills.getOrDefault(victim, 0) - 1);
             }
         }
     }
 
-    private String extractPlayerName(String line) {
+    public String extractPlayerName(String line) {
         int start = line.indexOf("n\\") + 2;
         int end = line.indexOf("\\t\\");
         return line.substring(start, end);
 }
 
-    private String extractKiller(String line) {
+    public String extractKiller(String line) {
         String[] parts = line.split(": ");
  
         if (parts.length > 1) {
@@ -69,7 +71,7 @@ public class Game {
         return null;
     }
 
-    private String extractVictim(String line) {
+    public String extractVictim(String line) {
         String[] parts = line.split("killed ");
         
         if (parts.length > 1) {

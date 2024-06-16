@@ -45,6 +45,10 @@ public class ProcessLinesAndSaveUsecase{
             
         }
 
+        if(games.isEmpty()){
+            return 0;
+        }
+
         return gameRepository.saveBulk(games);
 
     }
