@@ -13,17 +13,22 @@ import org.springframework.web.multipart.MultipartFile;
 import com.example.game_log_parser.core.domain.usecases.ProcessLinesAndSaveUsecase;
 import com.example.game_log_parser.presentation.dtos.UploadSuccessMessageDto;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 
 @RequestMapping("api/v1/file")
 @RestController()
 @AllArgsConstructor()
+@Tag(name = "File Input", description = "The file endpoints")   
 public class FileController {
 
     @Autowired()
     private final ProcessLinesAndSaveUsecase processLinesAndSaveUsecase;
 
-    @PostMapping
+    @PostMapping(
+        consumes = { "multipart/form-data" },
+        produces = { "application/json" }
+    )
     public ResponseEntity<UploadSuccessMessageDto> uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
 
         int gamesProcessed = processLinesAndSaveUsecase.execute(file.getInputStream());

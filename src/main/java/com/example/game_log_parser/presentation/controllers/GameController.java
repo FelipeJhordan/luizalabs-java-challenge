@@ -15,11 +15,17 @@ import com.example.game_log_parser.core.domain.usecases.GetGamesUsecase;
 import com.example.game_log_parser.presentation.dtos.GameDto;
 import com.example.game_log_parser.presentation.mapper.GameDtoMapper;
 
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 
 @RequestMapping("api/v1/game")
 @RestController
 @AllArgsConstructor
+@Tag(name = "Game", description = "The Game endpoints")   
 public class GameController {
     private final GetGamesUsecase getGamesUsecase;
     private final GetGamesByIdUsecase getGamesByIdUsecase;
@@ -32,6 +38,12 @@ public class GameController {
     }
 
     @GetMapping("/{id}")
+    @ApiResponses(value = { 
+    @ApiResponse(responseCode = "200", description = "Found the Game", 
+        content = { @Content(mediaType = "application/json", 
+        schema = @Schema(implementation = GameDto.class)) }),
+    @ApiResponse(responseCode = "404", description = "Game not found", 
+    content = @Content) })
     public ResponseEntity<GameDto> getGameById(@PathVariable final long id) {
         Game game = getGamesByIdUsecase.execute(id);
         
