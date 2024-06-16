@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Document(collection = "database_sequences")
 @Data
-public class DatabaseSequence {
+public class DatabaseSequenceModel {
 
     @Id
     private String id;
