@@ -10,13 +10,20 @@ import org.springframework.stereotype.Repository;
 
 import com.example.game_log_parser.infra.database.models.DatabaseSequenceModel;
 
+
 import static org.springframework.data.mongodb.core.query.Criteria.where;
 import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
 
 @Repository
 public class DatabaseSequenceRepository {
-  @Autowired
     private MongoOperations mongoOperations;
+
+    @Autowired
+    public DatabaseSequenceRepository(
+        MongoOperations mongoOperations
+    ) {
+        this.mongoOperations = mongoOperations;
+    }
 
     public long generateSequence(String seqName) {
         DatabaseSequenceModel counter = mongoOperations.findAndModify(new Query().addCriteria(where("_id").is(seqName)),
