@@ -1,7 +1,7 @@
 package com.example.game_log_parser.presentation.dtos;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -12,6 +12,6 @@ public class GameDto {
     private int id;
     @JsonProperty("total_kills")
     private int totalKills;
-    private List<String> players;
+    private Set<String> players;
     private Map<String, Integer> kills;
 }

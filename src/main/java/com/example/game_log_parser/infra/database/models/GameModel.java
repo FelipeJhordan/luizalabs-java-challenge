@@ -1,7 +1,7 @@
 package com.example.game_log_parser.infra.database.models;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
@@ -22,7 +22,7 @@ public class GameModel {
 
     private int totalKills;
 
-    private List<String> players;
+    private Set<String> players;
 
     private Map<String, Integer> kills;
 }
