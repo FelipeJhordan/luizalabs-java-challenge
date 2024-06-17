@@ -17,7 +17,11 @@
   - [Cobertura Atual](#cobertura-atual)
 ## Objetivo
 Construir um projeto Java capa de ler um arquivo de Logs gerado por um FPS (first-person shooter), processar e construir uma análise de jogadores, kills por jogador e kills por partida.
-
+- [X] Java 17
+- [X] Documentação seguindo OPEN API 3.0
+- [X] Gravar no banco de dados
+- [X] Testes unitários
+- [X] Docker
 ## Ferramentas 
 ### Tecnologias Utilizadas
 - Java 17.x
