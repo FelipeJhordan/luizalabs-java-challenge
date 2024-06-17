@@ -36,7 +36,24 @@ docker compose up
 ```
 
 
+## Swagger / Open API 
+As funcionalidades da aplicação podem ser acessadas utilizando chamadas REST via métodos HTTP.
+### Como acessar
+#### Formato JSON
+http://localhost:8080/api-docs
+#### Web
+http://localhost:8080/swagger-ui/index.html
 
+## Organização e Arquitetura
+A aplicação foi separada utilizando uma visão inspirada na arquitetura limpa, criando camadas como Presentation ( Entrada/Saída de dados ), Aplicação (  Domínio ( Operações principais que cumprem o objetivo da aplicação ), Aplicação ( funcionalidades e configurações principais ) e Infra ( Ferramentas externas como Gateways/Acesso a banco de dados e disco ). 
+Uma das regras para evitar acoplamento foi a utilização de interfaces, principalmente para que camadas mais perto do "domínio" não dependese das camadas mais "externas".
+
+## Regras adicionais
+Alguns fluxos lógicos que não estavam na descrição do desafio foram estabelecidos, mas que podem ou não ser alterados:
+## Jogador se matar utilizando uma bomba 
+Nesse caso o jogador não ganha um kill, mas o total de kills do jogo é incrementado.
+## Jogador com kills negativas 
+É possível o jogador ficar com KDA negativo caso ela morra pelo mundo e não tenha um saldo que mantenha ele com um número neutro ou positivo.
 
 ## Testes
 ### Descrição
@@ -53,10 +70,3 @@ mvn jacoco:prepare-agent test install jacoco:report
 ### Cobertura Atual
 ![image](https://github.com/FelipeJhordan/luizalabs-java-challenge/assets/44248690/a457614b-32ca-4194-b376-15c376999f41)
 
-## Swagger / Open API 
-As funcionalidades da aplicação podem ser acessadas utilizando chamadas REST via métodos HTTP.
-### Como acessar
-#### Formato JSON
-http://localhost:8080/api-docs
-#### Web
-http://localhost:8080/swagger-ui/index.html
