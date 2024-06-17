@@ -1,4 +1,20 @@
 # Desafio LuizaLabs Java
+- [Objetivo](#objetivo)
+- [Ferramentas](#ferramentas)
+  - [Tecnologias Utilizadas](#tecnologias-utilizadas)
+  - [Utilitários e ferramentas utilizadas](#utilitários-e-ferramentas-utilizadas)
+- [Como executar](#como-executar)
+  - [Requisitos](#requisitos)
+  - [Passos](#passos)
+- [Swagger / Open API](#swagger--open-api)
+  - [Como acessar](#como-acessar)
+- [Organização e Arquitetura](#organização-e-arquitetura)
+- [Regras adicionais](#regras-adicionais)
+- [Testes](#testes)
+  - [Descrição](#descrição)
+  - [Como Testar](#como-testar)
+  - [Como gerar o relatório de cobertura](#como-gerar-o-relatório-de-cobertura)
+  - [Cobertura Atual](#cobertura-atual)
 ## Objetivo
 Construir um projeto Java capa de ler um arquivo de Logs gerado por um FPS (first-person shooter), processar e construir uma análise de jogadores, kills por jogador e kills por partida.
 
