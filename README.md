@@ -55,6 +55,7 @@ Inicializar a orquestração da aplicação e do banco de dados.
 docker compose up
 ```
 
+Chamar a rota localhost:8080/api/v1/file com o arquivo <a href="https://github.com/FelipeJhordan/luizalabs-java-challenge/blob/games.log">Games.log</a>
 
 ## Swagger / Open API 
 As funcionalidades da aplicação podem ser acessadas utilizando chamadas REST via métodos HTTP.
@@ -64,12 +65,15 @@ http://localhost:8080/api-docs
 #### Web
 http://localhost:8080/swagger-ui/index.html
 
+### Postman
+Foi gerado uma collection para ser <a href="https://github.com/FelipeJhordan/luizalabs-java-challenge/blob/LuizaLabs.postman_collection.json">importada no POSTMAN</a>, com intuito de facilitar o teste das rotas.
+
 ## Organização e Arquitetura
 A aplicação foi separada utilizando uma visão inspirada na arquitetura limpa, criando camadas como Presentation ( Entrada/Saída de dados ), Aplicação (  Domínio ( Operações principais que cumprem o objetivo da aplicação ), Aplicação ( funcionalidades e configurações principais ) e Infra ( Ferramentas externas como Gateways/Acesso a banco de dados e disco ). 
 Uma das regras para evitar acoplamento foi a utilização de interfaces, principalmente para que camadas mais perto do "domínio" não dependese das camadas mais "externas".
 
 ## Regras adicionais
-Alguns fluxos lógicos que não estavam na descrição do desafio foram estabelecidos, mas que podem ou não ser alterados:
+Foi necessário estabelecer algumas regras, pois não estavam estabelecidas no desafio.
 ## Jogador se matar utilizando uma bomba 
 Nesse caso o jogador não ganha um kill, mas o total de kills do jogo é incrementado.
 ## Jogador com kills negativas 
