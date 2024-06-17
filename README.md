@@ -17,6 +17,27 @@ Construir um projeto Java capa de ler um arquivo de Logs gerado por um FPS (firs
 - mongo-express
 - Postman
 
+## Como executar
+### Requisitos
+- Maven
+- Docker
+- Java 17
+- WSL ou distro LINUX
+
+### Passos
+Buildar a imagem da aplicação utilizandos os passos listados no Dockerfile
+```
+docker compose build
+```
+
+Inicializar a orquestração da aplicação e do banco de dados.
+```
+docker compose up
+```
+
+
+
+
 ## Testes
 ### Descrição
 Foi criado testes unitários para garantir que as pequenas unidades de códigos funcionais estejam funcionando de acordo com previsto.
