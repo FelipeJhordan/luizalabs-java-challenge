@@ -45,7 +45,7 @@ Construir um projeto Java capa de ler um arquivo de Logs gerado por um FPS (firs
 - WSL ou distro LINUX
 
 ### Passos
-Buildar a imagem da aplicação utilizandos os passos listados no Dockerfile
+Buildar a imagem da aplicação utilizando os passos listados no Dockerfile.
 ```
 docker compose build
 ```
@@ -79,7 +79,7 @@ Nesse caso o jogador não ganha um kill, mas o total de kills do jogo é increme
 ### Descrição
 Foi criado testes unitários para garantir que as pequenas unidades de códigos funcionais estejam funcionando de acordo com previsto.
 ### Como Testar
-Executar o comando utilizando maven
+Executar o comando utilizando maven.
 ```
 mvn test
 ```
