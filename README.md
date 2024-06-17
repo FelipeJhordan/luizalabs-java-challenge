@@ -55,7 +55,7 @@ Inicializar a orquestração da aplicação e do banco de dados.
 docker compose up
 ```
 
-Chamar a rota localhost:8080/api/v1/file com o arquivo <a href="https://github.com/FelipeJhordan/luizalabs-java-challenge/blob/games.log">Games.log</a>
+Chamar a rota localhost:8080/api/v1/file com o arquivo <a href="https://github.com/FelipeJhordan/luizalabs-java-challenge/blob/main/games.log">Games.log</a>
 
 ## Swagger / Open API 
 As funcionalidades da aplicação podem ser acessadas utilizando chamadas REST via métodos HTTP.
@@ -66,7 +66,7 @@ http://localhost:8080/api-docs
 http://localhost:8080/swagger-ui/index.html
 
 ### Postman
-Foi gerado uma collection para ser <a href="https://github.com/FelipeJhordan/luizalabs-java-challenge/blob/LuizaLabs.postman_collection.json">importada no POSTMAN</a>, com intuito de facilitar o teste das rotas.
+Foi gerado uma collection para ser <a href="https://github.com/FelipeJhordan/luizalabs-java-challenge/blob/main/LuizaLabs.postman_collection.json">importada no POSTMAN</a>, com intuito de facilitar o teste das rotas.
 
 ## Organização e Arquitetura
 A aplicação foi separada utilizando uma visão inspirada na arquitetura limpa, criando camadas como Presentation ( Entrada/Saída de dados ), Aplicação (  Domínio ( Operações principais que cumprem o objetivo da aplicação ), Aplicação ( funcionalidades e configurações principais ) e Infra ( Ferramentas externas como Gateways/Acesso a banco de dados e disco ). 
